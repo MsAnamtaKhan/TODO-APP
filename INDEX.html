@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>FIRST TODO APP</title>
+    </head>
+    <body>
+        HTML HERE GOES HERE
+
+        <script>
+     //   JAVASCRIPT
+        console.log("HELLO WORLD");
+       /* var todoList={  
+            todoArray: ['item 1','item2','item3'],//property of object and array itself
+    
+        displayTodos: function () //anonymous function: which does not have name
+        {
+            console.log('TODOLOIST:',this.todoArray) //IF OUTSIDE THE OBJECT todoList.todoArray
+        },
+        addTodos:function(todoText)
+        {
+            this.todoArray.push(todoText);
+            this.displayTodos();
+        },
+        changeTodo:function(index,newTodoText)
+        {
+            this.todoArray[index]=newTodoText;
+            this.displayTodos();
+        },
+        deleteTodo:function(index)
+        {
+            this.todoArray.splice(index,1);
+            this.displayTodos();
+        }
+        }*/
+        var todoList2={
+            todoArray:[],
+            displayTodos: function () //anonymous function: which does not have name
+           {//REFACTORING:CHANGING PREVIOUS  CODE
+            console.log('TODOLIST:'); //IF OUTSIDE THE OBJECT todoList.todoArray
+            for(var i=0;i<this.todoArray.length;i++)
+            {
+                console.log(this.todoArray[i].todoText);
+            }
+           },
+            addTodo:function(text)
+            {
+                this.todoArray.push(
+                    {
+                        completed:false,
+                        todoText: text
+                                   
+                    });
+                   this.displayTodos();     
+            },
+            changeTodo:function(index,newText)
+            {
+                this.todoArray[index].todoText=newText;
+                this.displayTodos();
+            },
+            toggleCompeleted:function(index)
+            {
+             this.todoArray[index].completed=true;
+            }
+
+        }
+        todoList2.addTodo('item1');
+        todoList2.addTodo('item2');
+        todoList2.addTodo('item3')
+        </script>
+    </body>
+</html>
